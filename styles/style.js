@@ -11,16 +11,16 @@ const styles = {
     backgroundColor: '#FFFFFF',
   },
   button:{
-    width:330,
-    height:45,
-    backgroundColor:'green',
-    color:"#ffffff",
     textAlign:'center',
-    paddingTop:12
+    flex:1,
+    paddingTop:12,
+    color:'#ffffff'
   },
   btnContainer:{
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(0, 0, 0, .1)'
+    width:300,
+    height:45,
+    borderRadius:5,
+    marginBottom:15
   },
   popupBTNdefault:{
     width:360,
@@ -67,6 +67,7 @@ const styles = {
     color:"rgb(157, 166, 169)",
     paddingTop:10,
     paddingBottom:10,
+    textAlign:'center'
   },
   menuTextActive:{
     color:"rgb(224, 84, 96)",

@@ -43,26 +43,28 @@ import styles from './styles/style.js';
 
 class Button extends React.Component {
   render() {
-    const { bsStyle } = this.props
+    const { smStyle } = this.props
     let backgroundColor, borderWidth = 0, borderColor = 'white'
-    if (bsStyle === 'primary') {
+    if (smStyle === 'primary') {
       backgroundColor = 'orange'
+      color = '#ffffff'
     }
-    else if (bsStyle === 'secondary') {
+    else if (smStyle === 'secondary') {
       backgroundColor = 'green'
+      color = '#ffffff'
     }
     else {
-      backgroundColor = 'red'
+      backgroundColor = '#ffffff'
       borderWidth = 2
       borderColor = 'orange'
     }
 
     return (
       <TouchableHighlight onPress={this.props.onPress}>
-        <View style={{  backgroundColor, borderColor, borderWidth }}>
-        <Text style={{...styles.button}}>
-          {this.props.children}
-        </Text>
+        <View style={{ ...styles.btnContainer, backgroundColor, borderColor, borderWidth }}>
+          <Text style={{...styles.button}}>
+            {this.props.children}
+          </Text>
         </View>
       </TouchableHighlight>
     )
@@ -94,14 +96,36 @@ class SignupPage extends Component {
           >
          <View style={styles.popup}>
           <View style={styles.popupContent}>
-            <Text>Hello World!</Text>
+            <Text>TRANSPORTATION & LOGISTICS</Text>
+            <Text>
+              Not able to see the roads when driving in the rain
+            </Text>
+            <Text>
+              Posted on June 7, 2016 (2 months ago)
+            </Text>
+            <Text>
+              3000 People have this problem
+            </Text>
+            <Button smStyle="primary">
+              I too have this problem
+            </Button>
+            <Button smStyle="secondary">
+              Suggest a Product / Service
+            </Button>
           </View>
 
-          <TouchableHighlight onPress={() => {
+          <Button smStyle="secondary"
+            onPress={() => {
+              this.setModalVisible(!this.state.modalVisible)
+            }}>
+            Hide Modal
+          </Button>
+
+          {/* <TouchableHighlight onPress={() => {
             this.setModalVisible(!this.state.modalVisible)
           }} style={styles.btnContainer}>
             <Text style={{...styles.button, ...styles.popupBTNdefault}}>Hide Modal</Text>
-          </TouchableHighlight>
+          </TouchableHighlight> */}
          </View>
         </Modal>
 
