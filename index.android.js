@@ -216,11 +216,15 @@ class SignupPage extends Component {
                 <Text style={{fontFamily: 'Arial', fontSize: 15, color:'#ffffff'}}>Login with Facebook</Text>
               </Icon.Button> */}
 
-              <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
-                <Text>
-                  Sign in with Facebook
-                </Text>
-              </LinearGradient>
+              <View style={styles.loginContainer}>
+                <TouchableOpacity>
+                  <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
+                    <Text style={styles.buttonText}>
+                      Sign in with Facebook
+                    </Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+              </View>
 
               <TouchableHighlight onPress={() => { this.setModalVisible(true) }} style={styles.feedThumpContainer}>
                 <View style={styles.feedThump}>

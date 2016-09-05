@@ -129,14 +129,11 @@ const styles = {
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 5,
-    padding:10
+    padding:10,
   },
   buttonText: {
-    fontSize: 18,
-    fontFamily: 'Gill Sans',
     textAlign: 'center',
-    margin: 10,
-    color: '#ffffff',
+    color: '#000000',
     backgroundColor: 'transparent',
   },
 };
