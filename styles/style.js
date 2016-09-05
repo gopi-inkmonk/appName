@@ -17,10 +17,8 @@ const styles = {
     color:'#ffffff'
   },
   btnContainer:{
-    width:300,
     height:45,
-    borderRadius:5,
-    marginBottom:15
+    borderRadius:5
   },
   popupBTNdefault:{
     width:360,
@@ -43,14 +41,13 @@ const styles = {
   },
   hamburger:{
     color:"#ffffff",
-    textAlign:'left',
     padding:15,
-    width:70,
+    width:45,
     flex:0,
+    fontSize:17
   },
   topStrip_text:{
     color:"#ffffff",
-    textAlign:'center',
     padding:15,
     flex:1
   },
@@ -126,6 +123,21 @@ const styles = {
     textAlign:'center',
     color:'grey',
     marginBottom:30,
+  },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5,
+    padding:10
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
   },
 };
 

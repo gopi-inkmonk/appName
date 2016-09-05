@@ -19,6 +19,8 @@ import {
 } from 'react-native';
 
 import styles from './styles/style.js';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 // class appName extends Component {
@@ -42,9 +44,29 @@ import styles from './styles/style.js';
 // }
 
 class Button extends React.Component {
+  static defaultProps = {
+    showMargin: true
+  }
   render() {
-    const { smStyle } = this.props
-    let backgroundColor, borderWidth = 0, borderColor = 'white'
+    const {
+      smStyle,
+      showMargin
+    } = this.props
+    let
+      backgroundColor,
+      borderWidth = 0,
+      borderColor = 'white',
+      color = '#ffffff'
+
+    let marginBottom
+
+    if (showMargin) {
+      marginBottom = 20
+    }
+    else {
+      marginBottom = 0
+    }
+
     if (smStyle === 'primary') {
       backgroundColor = 'orange'
       color = '#ffffff'
@@ -57,12 +79,13 @@ class Button extends React.Component {
       backgroundColor = '#ffffff'
       borderWidth = 2
       borderColor = 'orange'
+      color = '#000000'
     }
 
     return (
       <TouchableHighlight onPress={this.props.onPress}>
-        <View style={{ ...styles.btnContainer, backgroundColor, borderColor, borderWidth }}>
-          <Text style={{...styles.button}}>
+        <View style={{ ...styles.btnContainer, backgroundColor, borderColor, borderWidth, marginBottom }}>
+          <Text style={{...styles.button, color }}>
             {this.props.children}
           </Text>
         </View>
@@ -114,7 +137,8 @@ class SignupPage extends Component {
             </Button>
           </View>
 
-          <Button smStyle="secondary"
+          <Button
+            showMargin={ false }
             onPress={() => {
               this.setModalVisible(!this.state.modalVisible)
             }}>
@@ -144,15 +168,15 @@ class SignupPage extends Component {
           <TouchableHighlight onPress={() => {
             this.props.setMenuVisibility(true)
           }}>
-            <Text style={styles.hamburger}>Menu</Text>
+            <Icon name="bars" style={styles.hamburger}></Icon>
           </TouchableHighlight>
 
-          <Text style={styles.topStrip_text}>Mafian Home</Text>
+          <Text style={styles.topStrip_text}>Home</Text>
 
           <TouchableHighlight onPress={() => {
             this.props.setMenuVisibility(true)
           }}>
-            <Text style={styles.hamburger}>Menu</Text>
+            <Icon name="plus" style={styles.hamburger}></Icon>
           </TouchableHighlight>
         </View>
 
@@ -187,6 +211,16 @@ class SignupPage extends Component {
               <Text style={styles.para}>
                 You can notify them about your product/service by submitting your response.
               </Text>
+
+              {/* <Icon.Button name="facebook" backgroundColor="#3b5998">
+                <Text style={{fontFamily: 'Arial', fontSize: 15, color:'#ffffff'}}>Login with Facebook</Text>
+              </Icon.Button> */}
+
+              <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
+                <Text>
+                  Sign in with Facebook
+                </Text>
+              </LinearGradient>
 
               <TouchableHighlight onPress={() => { this.setModalVisible(true) }} style={styles.feedThumpContainer}>
                 <View style={styles.feedThump}>
