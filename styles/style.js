@@ -10,6 +10,11 @@ const styles = {
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
   },
+  page: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   button:{
     textAlign:'center',
     flex:1,
@@ -33,44 +38,12 @@ const styles = {
     flex:1,
     padding:30
   },
-  topStrip:{
-    backgroundColor:"rgb(49, 56, 63)",
-    width: 360,
-    flexDirection: 'row',
-    justifyContent: 'flex-start'
-  },
   hamburger:{
     color:"#ffffff",
     padding:15,
     width:45,
     flex:0,
     fontSize:17
-  },
-  topStrip_text:{
-    color:"#ffffff",
-    padding:15,
-    flex:1
-  },
-  layoutwrapper:{
-    flex:1,
-    flexDirection: 'row',
-  },
-  menuWrapper:{
-    width: 70,
-    backgroundColor:"rgb(230, 235, 238)",
-    paddingTop:15,
-  },
-  menuText:{
-    color:"rgb(157, 166, 169)",
-    paddingTop:10,
-    paddingBottom:10,
-    textAlign:'center'
-  },
-  menuTextActive:{
-    color:"rgb(224, 84, 96)",
-  },
-  contentWrapper:{
-    flex:1,
   },
   contentWrapperScroll:{
     padding:15,
@@ -136,6 +109,10 @@ const styles = {
     color: '#000000',
     backgroundColor: 'transparent',
   },
+  tab: {
+    // backgroundColor:'#ffffff',
+    color:'#A8A9AD',
+  }
 };
 
 export default styles;
