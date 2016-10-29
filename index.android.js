@@ -25,11 +25,8 @@ import PostHassle from './page-components/post-hassle'
 
 import Button from './components/Button'
 
-import { TabViewAnimated, TabBarTop } from 'react-native-tab-view';
-
 import styles from './styles/style.js';
 import Icon from './components/Icon';
-import LinearGradient from 'react-native-linear-gradient';
 
 
 // class appName extends Component {
@@ -53,48 +50,20 @@ import LinearGradient from 'react-native-linear-gradient';
 // }
 
 class AppHome extends Component {
-  state = {
-    index: 0,
-    routes: [
-      { key: '1', title: 'Home' },
-      { key: '2', title: 'Customize Feed' },
-      { key: '3', title: 'Profile' },
-      { key: '4', title: 'Post Hassle' },
-    ],
-  };
-
-  _handleChangeTab = (index) => {
-    this.setState({ index });
-  };
-
-  _renderHeader = (props) => {
-    return <TabBarTop {...props} style={styles.tab}/>;
-  };
-
-  _renderScene = ({ route }) => {
-    switch (route.key) {
-    case '1':
-      return <HomeFeed/>;
-    case '2':
-      return <CustomizeFeed/>;
-    case '3':
-      return <Profile/>;
-    case '4':
-      return <PostHassle/>;
-    default:
-      return null;
-    }
-  };
-
   render() {
     return (
-      <TabViewAnimated
-        style={styles.container}
-        navigationState={this.state}
-        renderScene={this._renderScene}
-        renderHeader={this._renderHeader}
-        onRequestChangeTab={this._handleChangeTab}
-      />
+      <View style={styles.appWrapper}>
+        <View style={styles.heroTab}>
+          <Icon style={{...styles.tabIcon, ...styles.tabActive}} name="home"></Icon>
+          <Icon style={styles.tabIcon} name="sliders"></Icon>
+          <Icon style={styles.tabIcon} name="user"></Icon>
+          <Icon style={{...styles.tabIcon, ...styles.plusCircle}} name="plus-circle"></Icon>
+        </View>
+        <HomeFeed/>
+        {/* <CustomizeFeed/>
+        <Profile/>
+        <PostHassle/> */}
+      </View>
     );
   }
 }
