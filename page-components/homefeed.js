@@ -20,7 +20,7 @@ import Icon from '../components/Icon';
 export default class HomeFeed extends React.Component {
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
           <View style={styles.innerTabWrapper}>
             <View style={styles.innerTab}>
               <Text style={styles.innerTabText}>IGNORED (10)</Text>
@@ -34,7 +34,7 @@ export default class HomeFeed extends React.Component {
           </View>
 
           <FeedCard/>
-      </ScrollView>
+      </View>
     );
   }
 }

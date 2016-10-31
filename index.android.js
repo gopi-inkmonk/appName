@@ -59,8 +59,11 @@ class AppHome extends Component {
           <Icon style={styles.tabIcon} name="user"></Icon>
           <Icon style={{...styles.tabIcon, ...styles.plusCircle}} name="plus-circle"></Icon>
         </View>
-        <HomeFeed/>
-        {/* <CustomizeFeed/>
+        <ScrollView style={styles.containerWrapper}>
+          <HomeFeed/>
+        </ScrollView>
+        {/*
+        <CustomizeFeed/>
         <Profile/>
         <PostHassle/> */}
       </View>

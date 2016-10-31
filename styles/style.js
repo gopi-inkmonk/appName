@@ -6,6 +6,7 @@ const styles = {
   appWrapper: {
     backgroundColor:'#F1F2F7',
     flex:1,
+    flexDirection:'column',
   },
   heroTab: {
     flexDirection:'row',
@@ -49,6 +50,9 @@ const styles = {
     color:'#52545B',
   },
   container: {
+
+  },
+  containerWrapper: {
     flex: 1,
     backgroundColor:'#F1F2F7',
   },
